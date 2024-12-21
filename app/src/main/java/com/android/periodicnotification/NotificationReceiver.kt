@@ -1,5 +1,6 @@
 package com.android.periodicnotification
 
+import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.BroadcastReceiver
@@ -12,6 +13,7 @@ import com.android.periodicnotification.Constants.CHANNEL_ID
 import com.android.periodicnotification.Constants.CHANNEL_NAME
 
 class NotificationReceiver : BroadcastReceiver() {
+    @SuppressLint("MissingPermission")
     override fun onReceive(context: Context?, p1: Intent?) {
         if (context != null) {
             val builder = NotificationCompat.Builder(context, CHANNEL_ID)
